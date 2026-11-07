@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#29251d">
+<meta name="description" content="Vansh Khankriyal — BCA (AI & Data Science) student at Graphic Era, Dehradun. Aspiring Talent Acquisition professional, AI learner and pianist.">
+<title>Vansh Khankriyal — Portfolio</title>
+<style>
+:root{--ink:#29251d;--gold:#c3a47b;--text:#eee2ca;--muted:#c5b79e;--paper:#eadfc7;--peri:#b7976c;
+--serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Baskerville,Georgia,serif;--ease:cubic-bezier(.2,.78,.2,1);--mx:0px;--my:0px}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;min-height:100%;background:var(--ink)}
+body{min-height:100svh;overflow:hidden;color:var(--text);font-family:var(--serif);-webkit-font-smoothing:antialiased}
+a,button{font:inherit;color:inherit}
+button{border:0;outline:0;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.stage{position:relative;isolation:isolate;width:100%;min-height:100svh;overflow:hidden;
+background:radial-gradient(circle at 49% 84%,rgba(117,102,71,.2),transparent 34%),radial-gradient(circle at 14% 4%,rgba(100,112,77,.12),transparent 28%),linear-gradient(180deg,#343025,var(--ink) 48%,#211e18)}
+.topbar{position:fixed;z-index:50;top:0;left:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:26px 3.2vw;pointer-events:none}
+.brand{color:var(--gold);font-size:clamp(22px,2.1vw,30px);font-style:italic;font-weight:600;letter-spacing:-.035em;text-decoration:none;pointer-events:auto}
+.top-link{pointer-events:auto;height:46px;min-width:130px;padding:0 24px;display:inline-grid;place-items:center;border-radius:999px;background:var(--paper);color:#30291f;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;box-shadow:0 8px 26px rgba(28,22,14,.13);transition:transform .24s var(--ease)}
+.top-link:hover{transform:translateY(-3px)}
+.hero-word{position:absolute;z-index:1;top:11.5vh;left:50%;margin:0;color:var(--gold);font-size:clamp(150px,22vw,325px);font-style:italic;font-weight:500;letter-spacing:-.085em;line-height:.84;white-space:nowrap;user-select:none;
+transform:translate3d(calc(-50% + var(--mx)*-.12),calc(var(--my)*-.12),0);transition:opacity .7s,filter .7s,transform .9s var(--ease)}
+.tagline{position:absolute;z-index:2;top:calc(11.5vh + clamp(150px,19vw,280px));left:50%;transform:translateX(-50%);margin:0;width:90%;text-align:center;color:var(--muted);font-size:clamp(13px,1.2vw,17px);font-style:italic;letter-spacing:.04em;transition:opacity .5s}
+.gallery{position:absolute;z-index:5;inset:0;perspective:1400px}
+.book-card{--hy:0px;--lx:0px;--ly:0px;position:absolute;left:var(--x);top:var(--y);width:var(--w);aspect-ratio:.672/1;padding:0;background:transparent;cursor:pointer;
+transform:translate3d(calc(-50% + var(--lx)),calc(var(--hy) + var(--ly)),0) rotate(var(--r)) rotateY(var(--yaw));transform-style:preserve-3d;
+transition:left 1.1s var(--ease),top 1.1s var(--ease),width 1.1s var(--ease),opacity .5s,filter .5s,transform .52s var(--ease)}
+.book-card[data-book=ta]{--x:23.2%;--y:44%;--w:min(30.5vw,420px);--r:-8deg;--yaw:-7deg;z-index:1}
+.book-card[data-book=ai]{--x:50%;--y:40%;--w:min(33vw,450px);--r:.8deg;--yaw:-3deg;z-index:3}
+.book-card[data-book=music]{--x:77%;--y:46%;--w:min(30.5vw,420px);--r:8deg;--yaw:7deg;z-index:2}
+.book-card:hover{--hy:-28px;z-index:8}
+.book{position:relative;display:block;width:100%;height:100%;transform-style:preserve-3d;transition:transform .8s var(--ease)}
+.book-card:hover .book{transform:scale(1.035)}
+.pages,.cover,.shadow{position:absolute;inset:0;border-radius:3px 7px 7px 3px}
+.shadow{inset:5% -4% -2% 4%;background:rgba(24,18,10,.7);filter:blur(22px);opacity:.7;transform:translate3d(18px,28px,-60px);z-index:-2}
+.pages{inset:1.7% 1.4% 1.7% 3.8%;border:1px solid rgba(84,68,45,.25);background:repeating-linear-gradient(0deg,rgba(105,86,58,.14) 0 1px,transparent 1px 2.8px),linear-gradient(90deg,#cfc1a4,#f2e8d2 14%,#e7dac0 87%,#cbb894);box-shadow:7px 5px 16px rgba(31,23,13,.26);transform:translate3d(7px,1px,-12px);z-index:1}
+.cover{z-index:3;overflow:hidden;border:1px solid rgba(238,224,194,.2);background:var(--cover);box-shadow:0 25px 38px rgba(24,18,10,.4),inset -12px 0 18px rgba(0,0,0,.16),inset 4px 0 9px rgba(255,255,255,.12);transform:translate3d(0,0,12px);transform-origin:1.5% center;transition:transform 1.2s var(--ease)}
+.cover::before{content:"";position:absolute;top:0;bottom:0;left:0;width:5.5%;background:linear-gradient(90deg,rgba(0,0,0,.35),rgba(255,255,255,.08) 35%,rgba(0,0,0,.12) 75%,transparent);opacity:.8}
+.cover::after{content:"";position:absolute;inset:6%;border:1px solid var(--ink-c);opacity:.35;border-radius:2px}
+.cover-copy{position:absolute;z-index:2;inset:9% 11% 8%;display:grid;grid-template-rows:auto auto auto 1fr auto;text-align:center;color:var(--ink-c)}
+.kicker{font-size:clamp(8px,.72vw,11px);font-style:italic;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.ctitle{margin-top:6%;font-size:clamp(30px,3.9vw,58px);font-weight:600;letter-spacing:-.05em;line-height:.92}
+.csub{margin-top:5%;font-size:clamp(10px,1.05vw,15px);font-style:italic;font-weight:600}
+.cfoot{align-self:end;padding-top:3%;border-top:1px solid currentColor;font-size:clamp(7px,.62vw,9px);font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.badge{position:absolute;z-index:6;top:47%;left:50%;display:grid;width:90px;height:62px;place-items:center;color:#312a21;background:#efe3ca;border-radius:46% 54% 50% 50%/55% 45% 55% 45%;font-size:11px;font-style:italic;font-weight:700;letter-spacing:.12em;opacity:0;transform:translate(-50%,-50%) scale(.76) rotate(-3deg);transition:opacity .26s,transform .42s var(--ease);pointer-events:none}
+.book-card:hover .badge,.book-card:focus-visible .badge{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-3deg)}
+
+/* detail */
+.detail{position:absolute;z-index:12;top:14.5%;right:4.5%;width:min(47.5%,650px);opacity:0;transition:opacity .52s ease .28s;pointer-events:none}
+.dtitle{margin:0 0 20px;color:var(--gold);font-size:clamp(46px,5.4vw,78px);font-style:italic;font-weight:500;letter-spacing:-.055em;line-height:.96}
+.dscroll{max-height:clamp(320px,calc(100svh - 300px),640px);overflow-y:auto;overscroll-behavior:contain;padding:0 22px 40px 0;scrollbar-width:thin;scrollbar-color:rgba(195,164,123,.7) rgba(73,66,49,.35);
+-webkit-mask-image:linear-gradient(#000 calc(100% - 50px),transparent);mask-image:linear-gradient(#000 calc(100% - 50px),transparent)}
+.ddesc{margin:0;color:var(--muted);font-size:clamp(14px,1.28vw,17px);line-height:1.64}
+.sec{margin-top:24px;padding-top:20px;border-top:1px solid rgba(220,200,164,.2)}
+.label{margin:0 0 14px;color:var(--gold);font-size:12px;font-style:italic;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.steps{display:grid;gap:14px;margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{display:grid;grid-template-columns:34px 1fr;gap:12px;counter-increment:s}
+.steps li::before{content:counter(s,decimal-leading-zero);padding-top:2px;color:rgba(195,164,123,.75);font-size:12px;font-style:italic;letter-spacing:.08em}
+.steps strong{display:block;color:#e8dcc4;font-size:15px;font-style:italic;font-weight:650;margin-bottom:3px}
+.steps span{color:var(--muted);font-size:14px;line-height:1.58}
+.dock{position:fixed;z-index:24;right:4.5%;bottom:26px;width:min(47.5%,650px)}
+.rail{display:flex;gap:8px;padding:8px;border:1px solid rgba(238,226,202,.07);border-radius:32px;background:rgba(64,58,43,.88);box-shadow:0 16px 32px rgba(26,20,12,.2);backdrop-filter:blur(12px)}
+.pill{flex:1 1 0;display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 14px;border-radius:24px;background:var(--peri);color:#2e261d;font-size:15px;font-style:italic;font-weight:700;text-decoration:none;white-space:nowrap;transition:transform .22s var(--ease),filter .22s}
+.pill:hover{transform:translateY(-2px);filter:brightness(1.07)}
+.pill.light{background:var(--paper)}
+.close{position:absolute;z-index:52;top:28px;left:50%;display:grid;width:52px;height:52px;place-items:center;border:1px solid rgba(255,255,255,.26);border-radius:50%;background:rgba(42,37,28,.28);color:var(--paper);cursor:pointer;font-size:27px;font-weight:200;opacity:0;transform:translate3d(-50%,-18px,0) rotate(-45deg);transition:opacity .4s,transform .62s var(--ease);pointer-events:none;backdrop-filter:blur(8px)}
+
+[data-mode=detail] .hero-word{opacity:0;filter:blur(16px);transform:translate3d(-50%,-34px,0) scale(.9)}
+[data-mode=detail] .tagline{opacity:0}
+[data-mode=detail] .book-card:not(.sel){opacity:0;filter:blur(10px);transform:translate3d(-50%,60vh,-200px) scale(.8);pointer-events:none}
+[data-mode=detail] .book-card.sel{--hy:0px;--lx:0px;--ly:0px;left:27%;top:50%;width:min(30vw,410px);z-index:14;cursor:default;transform:translate3d(-50%,-50%,0) rotate(-3deg);pointer-events:none}
+[data-mode=detail] .book-card.sel .book{transform:scale(1.02) rotateX(var(--pitch,0deg)) rotateY(var(--tilt,-5deg));transition-duration:.17s}
+[data-mode=detail] .book-card.sel .cover{transform:translate3d(0,0,18px) rotateY(-29deg)}
+[data-mode=detail] .book-card.sel .badge{opacity:0}
+[data-mode=detail] .detail{opacity:1;pointer-events:auto}
+[data-mode=gallery] .detail{transition-duration:.16s;transition-delay:0s}
+[data-mode=detail] .close{opacity:1;transform:translate3d(-50%,0,0) rotate(0);pointer-events:auto}
+
+@media(max-width:900px){
+body{overflow:auto}
+.topbar{padding:18px}.top-link{display:none}
+.hero-word{top:15vh;font-size:clamp(120px,30vw,230px)}
+.tagline{top:calc(15vh + 27vw)}
+.book-card[data-book=ta]{--x:14%;--y:46%;--w:min(49vw,350px)}
+.book-card[data-book=ai]{--x:50%;--y:42%;--w:min(54vw,385px)}
+.book-card[data-book=music]{--x:87%;--y:47%;--w:min(49vw,350px)}
+[data-mode=detail] .stage{min-height:calc(100svh + 780px);overflow-y:auto}
+[data-mode=detail] .book-card.sel{left:50%;top:50svh;width:min(60vw,320px)}
+.detail{top:calc(100svh + 40px);left:7%;right:7%;width:auto;padding-bottom:110px}
+.dscroll{max-height:none;overflow:visible;-webkit-mask-image:none;mask-image:none}
+.dock{left:16px;right:16px;bottom:16px;width:auto}
+.pill{font-size:13px;padding:0 8px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.001ms!important;animation-duration:.001ms!important}}
+</style>
+</head>
+<body data-mode="gallery">
+<main class="stage" aria-label="Vansh Khankriyal portfolio">
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Vansh Khankriyal home">Vansh Khankriyal</a>
+    <a class="top-link" href="mailto:vanshgeu2027@gmail.com">Get in touch</a>
+  </header>
+
+  <h1 class="hero-word" aria-label="Vansh">Vansh</h1>
+  <p class="tagline">BCA (AI &amp; Data Science) · Graphic Era, Dehradun · Open to Talent Acquisition roles</p>
+
+  <section class="gallery" aria-label="Choose a chapter">
+    <button class="book-card" type="button" data-book="ta" aria-label="Open Talent Acquisition chapter" style="--cover:linear-gradient(160deg,#4a4230,#363126);--ink-c:#e3cf9f">
+      <span class="book" aria-hidden="true"><span class="shadow"></span><span class="pages"></span>
+        <span class="cover"><span class="cover-copy"><span class="kicker">Chapter · I</span><span class="ctitle">Talent<br>Acquisition</span><span class="csub">Finding the right people</span><span></span><span class="cfoot">Sourcing · Screening · Hiring</span></span></span>
+        <span class="badge">Read</span></span>
+    </button>
+    <button class="book-card" type="button" data-book="ai" aria-label="Open AI and Data Science chapter" style="--cover:linear-gradient(160deg,#b0684a,#945a3e);--ink-c:#3d1f13">
+      <span class="book" aria-hidden="true"><span class="shadow"></span><span class="pages"></span>
+        <span class="cover"><span class="cover-copy"><span class="kicker">Chapter · II</span><span class="ctitle">AI &amp;<br>Data</span><span class="csub">Learning in public</span><span></span><span class="cfoot">Python · GenAI · BCA</span></span></span>
+        <span class="badge">Read</span></span>
+    </button>
+    <button class="book-card" type="button" data-book="music" aria-label="Open Piano and Music chapter" style="--cover:linear-gradient(160deg,#6a7552,#566044);--ink-c:#1f2619">
+      <span class="book" aria-hidden="true"><span class="shadow"></span><span class="pages"></span>
+        <span class="cover"><span class="cover-copy"><span class="kicker">Chapter · III</span><span class="ctitle">Piano</span><span class="csub">Music &amp; Performance</span><span></span><span class="cfoot">Swaragini · Competitions</span></span></span>
+        <span class="badge">Read</span></span>
+    </button>
+  </section>
+
+  <section class="detail" id="detail" aria-live="polite" aria-hidden="true" inert>
+    <h2 class="dtitle" id="dtitle"></h2>
+    <div class="dscroll" id="dscroll" tabindex="0" aria-label="Chapter details">
+      <p class="ddesc" id="ddesc"></p>
+      <section class="sec"><p class="label" id="l1"></p><ol class="steps" id="dsteps"></ol></section>
+    </div>
+    <div class="dock"><div class="rail" aria-label="Contact links">
+      <a class="pill light" href="mailto:vanshgeu2027@gmail.com">Email</a>
+      <a class="pill" href="https://linkedin.com/in/vanshkhankriyal5" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="pill" href="https://github.com/vanshkhankriyal0" target="_blank" rel="noopener">GitHub</a>
+    </div></div>
+  </section>
+
+  <button class="close" id="close" type="button" aria-label="Close chapter" tabindex="-1">×</button>
+</main>
+
+<script>
+(() => {
+  const chapters = {
+    ta: {
+      title: "Talent Acquisition",
+      desc: "I'm looking for a Talent Acquisition Trainee role. I'm a final-year BCA (AI/DS) student who has already done hands-on candidate sourcing, and I want to build a career in recruitment that grows alongside AI-driven hiring tools.",
+      label: "What I bring",
+      items: [
+        ["Candidate sourcing", "Hands-on experience finding and shortlisting candidates through LinkedIn and Facebook."],
+        ["Tech-aware hiring", "A BCA in AI and Data Science means I understand the roles I'd be recruiting for."],
+        ["Comfortable with people", "Years of stage performance have made me confident communicating with anyone."],
+        ["Ready now", "Based in Dehradun and looking for an opportunity where I can learn fast and contribute from week one."]
+      ]
+    },
+    ai: {
+      title: "AI & Data Science",
+      desc: "I'm pursuing a BCA in AI and Data Science at Graphic Era Deemed University, Dehradun (2023–2027). I started with zero coding experience and I'm building up steadily, aiming to break into tech and AI roles.",
+      label: "My learning track",
+      items: [
+        ["Python", "Learned through Apna College and practice on HackerRank, where I earned the Python Bronze badge."],
+        ["NVIDIA DLI · Generative AI", "Completed the NVIDIA Deep Learning Institute Generative AI course and added it to my profile."],
+        ["Next up", "Prompt Engineering and Generative AI for Everyone (DeepLearning.AI)."],
+        ["Open source", "My projects live on GitHub as I build them: github.com/vanshkhankriyal0."]
+      ]
+    },
+    music: {
+      title: "Piano & Music",
+      desc: "Alongside tech, I'm a pianist and a core member of Swaragini, Graphic Era's cultural society. Performing has taught me discipline, stage confidence and how to work in a team.",
+      label: "Achievements",
+      items: [
+        ["Grafest", "First place."],
+        ["Saturnalia · Thapar University", "First place."],
+        ["Youthopia · DIT", "First place."],
+        ["Swaragini", "Core member of Graphic Era's cultural society."]
+      ]
+    }
+  };
+
+  const body = document.body, stage = document.querySelector(".stage");
+  const cards = [...document.querySelectorAll(".book-card")];
+  const detail = document.getElementById("detail"), closeBtn = document.getElementById("close");
+  let selected = null, raf = 0, px = 0, py = 0, cx = -1e4, cy = -1e4;
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)");
+
+  function tick() {
+    raf = 0;
+    if (reduce.matches) return;
+    if (body.dataset.mode === "detail" && selected) {
+      const b = selected.getBoundingClientRect(), bx = b.left + b.width / 2, by = b.top + b.height / 2;
+      const inside = cx >= 0 && cx <= innerWidth && cy >= 0 && cy <= innerHeight;
+      const rx = Math.max(cx < bx ? bx : innerWidth - bx, 1), ry = Math.max(cy < by ? by : innerHeight - by, 1);
+      const x = inside ? Math.max(-1, Math.min(1, (cx - bx) / rx)) : -5 / 16;
+      const y = inside ? Math.max(-1, Math.min(1, (cy - by) / ry)) : 0;
+      selected.style.setProperty("--tilt", x * 16 + "deg");
+      selected.style.setProperty("--pitch", y * -10 + "deg");
+      return;
+    }
+    if (body.dataset.mode !== "gallery") return;
+    const r = document.documentElement.style;
+    r.setProperty("--mx", px * 11 + "px"); r.setProperty("--my", py * 8 + "px");
+    cards.forEach((c, i) => {
+      const d = i === 1 ? 1 : .58;
+      c.style.setProperty("--lx", px * 15 * d + "px"); c.style.setProperty("--ly", py * 9 * d + "px");
+    });
+  }
+
+  function open(card) {
+    if (body.dataset.mode === "detail") return;
+    const d = chapters[card.dataset.book]; if (!d) return;
+    selected = card;
+    document.getElementById("dtitle").textContent = d.title;
+    document.getElementById("ddesc").textContent = d.desc;
+    document.getElementById("l1").textContent = d.label;
+    document.getElementById("dsteps").replaceChildren(...d.items.map(([t, b]) => {
+      const li = document.createElement("li"), w = document.createElement("div");
+      const s = document.createElement("strong"), p = document.createElement("span");
+      s.textContent = t; p.textContent = b; w.append(s, p); li.append(w); return li;
+    }));
+    document.getElementById("dscroll").scrollTop = 0;
+    cards.forEach(c => { c.classList.toggle("sel", c === card); c.tabIndex = -1; });
+    body.dataset.mode = "detail";
+    detail.setAttribute("aria-hidden", "false"); detail.inert = false; closeBtn.tabIndex = 0;
+    setTimeout(() => closeBtn.focus({ preventScroll: true }), reduce.matches ? 0 : 700);
+  }
+
+  function close() {
+    if (body.dataset.mode !== "detail") return;
+    body.dataset.mode = "gallery";
+    detail.setAttribute("aria-hidden", "true"); detail.inert = true; closeBtn.tabIndex = -1;
+    const last = selected;
+    setTimeout(() => {
+      cards.forEach(c => { c.classList.remove("sel"); c.tabIndex = 0; });
+      selected = null; last && last.focus({ preventScroll: true }); stage.scrollTop = 0;
+    }, reduce.matches ? 0 : 700);
+  }
+
+  cards.forEach(c => c.addEventListener("click", () => open(c)));
+  closeBtn.addEventListener("click", close);
+  addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+  addEventListener("pointermove", e => {
+    px = e.clientX / innerWidth - .5; py = e.clientY / innerHeight - .5; cx = e.clientX; cy = e.clientY;
+    if (!raf) raf = requestAnimationFrame(tick);
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
